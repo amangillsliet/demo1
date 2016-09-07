@@ -1,8 +1,14 @@
 <?xml version="1.0"?>
-<testCase version="5.3.0.338ed32">
+<testCase version="5.4.0.4f90e5a">
     <procedures>
         <item name="main">
             <steps>
+                <item guid="e5f3cfd1-9a58-462b-bf67-39f6298e44ba" action="teststep">
+                    <command>
+                        <body>just test</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
                 <item guid="a7baac16-ff1d-464c-8c2b-c2bce78ddf51" action="open" session="s1">
                     <command>
                         <body>project://Demo_LS_test/session_profiles/wireshark.ffsp</body>
