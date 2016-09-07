@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+<SessionTemplate version="5.3.0.338ed32">
+    <baseApplication>com.fnfr.itest.applications.landslide</baseApplication>
+    <sessionProperties type="com.fnfr.itest.applications.landslide.LsSessionProperties">
+        <harness inherit="false">http://spirent.com/NTAF/harness/Landslide/13.0/Main</harness>
+        <tasServer action="open" harness="http://spirent.com/NTAF/harness/Landslide/13.0/Main" harnessName="Landslide" NodeId="spirent_proxy_1@wt2bwa1ite01v/unspecified" NodeId.inherit="false" toolId="landslide13.0" toolId.inherit="false" host="107.250.209.183" host.inherit="false" username="as615p" username.inherit="false" password.masked="true" password="R0H4NkGA7o8=" password.inherit="false"/>
+    </sessionProperties>
+    <nickName>landslide</nickName>
+</SessionTemplate>

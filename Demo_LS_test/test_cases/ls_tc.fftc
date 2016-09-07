@@ -1,0 +1,159 @@
+<?xml version="1.0"?>
+<testCase version="5.4.0.4f90e5a">
+    <execution autoUpdateExecutionTime="false"/>
+    <procedures>
+        <item name="main">
+            <steps>
+                <item guid="bd5455a4-4db1-4e9c-bd8d-01e479aa4ba5" action="open" session="landslide">
+                    <command>
+                        <body>project://Demo_LS_test/session_profiles/ls_ntaf_session.ffsp</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.svt.documents.OpenStepPropertyGroup">
+                        <stepProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        <sessionProperties type="com.fnfr.itest.applications.landslide.LsSessionProperties"/>
+                        <sessionClass type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                        <sessionVersion type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                    </applicationProperties>
+                </item>
+                <item guid="5f064f49-2f91-4d81-ad00-e9a9424b3dfc" action="retrieveLibraryItem" session="landslide" normalOffset="2.817" acceleratedOffset="2.817">
+                    <postProcessing>
+                        <analysisRules>
+                            <item>
+                                <extractorInfo extractorType="regex">
+                                    <extractorProperties type="com.fnfr.svt.mapping.regex.extractors.RegexExtractorPropertyGroup">
+                                        <regex>(java0x\\w+)</regex>
+                                    </extractorProperties>
+                                </extractorInfo>
+                                <processorInfo ruleType="store">
+                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.StoreProcessorPropertyGroup">
+                                        <storageLocation>handle0</storageLocation>
+                                    </ruleProperties>
+                                </processorInfo>
+                            </item>
+                        </analysisRules>
+                    </postProcessing>
+                    <applicationProperties type="com.fnfr.itest.platform2.shared.documents.ntaf.NtafTransferableDocumentObject" action="retrieveLibraryItem" subharness="http://spirent.com/NTAF/harness/Landslide/10.5/Retrieve" harness="http://spirent.com/NTAF/harness/Landslide/13.0/Main" harnessName="Landslide" itemType="TestSession" itemType.inherit="false" itemType.sub="false" libraryType="User" libraryType.inherit="false" libraryType.sub="false" libraryName="as615p" libraryName.inherit="false" libraryName.sub="false" itemName="4G_Basic" itemName.inherit="false" itemName.sub="false"/>
+                </item>
+                <item guid="d59c71f7-1942-4a5b-9a87-842fab67cf49" action="query" session="landslide" normalOffset="2.721" acceleratedOffset="2.721">
+                    <postProcessing>
+                        <analysisRules>
+                            <item>
+                                <extractorInfo extractorType="regex">
+                                    <extractorProperties type="com.fnfr.svt.mapping.regex.extractors.RegexExtractorPropertyGroup">
+                                        <regex>^.*$</regex>
+                                    </extractorProperties>
+                                </extractorInfo>
+                                <processorInfo ruleType="assert">
+                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.AssertionPropertyGroup">
+                                        <expression>[regexp &quot;ApnDnsEn&quot; $value]</expression>
+                                        <actionsWhenTrue>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup" severity="OK">
+                                                    <message>Found ApnDns</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="PassTestIfNotAlreadyFailed">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenTrue>
+                                        <actionsWhenFalse>
+                                            <item actionId="DeclareExecutionIssue">
+                                                <actionProperties type="com.fnfr.svt.execution.builtin.actions.ExecutionIssuePropertyGroup">
+                                                    <message>{auto_message_false}</message>
+                                                </actionProperties>
+                                            </item>
+                                            <item actionId="FailTest">
+                                                <actionProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                                            </item>
+                                        </actionsWhenFalse>
+                                    </ruleProperties>
+                                </processorInfo>
+                            </item>
+                        </analysisRules>
+                        <storeResponseAt>params</storeResponseAt>
+                    </postProcessing>
+                    <applicationProperties type="com.fnfr.itest.platform2.shared.documents.ntaf.NtafTransferableDocumentObject" action="query" subharness="http://spirent.com/NTAF/harness/Landslide/10.5/TclApi" harness="http://spirent.com/NTAF/harness/Landslide/13.0/Main" harnessName="Landslide">
+                        <arg inherit="false" parameter="arg">
+                            <item inherit="false">Parameters</item>
+                            <item inherit="false">$handle0.TsGroup.Tc</item>
+                        </arg>
+                    </applicationProperties>
+                </item>
+                <item guid="2c55d8a6-30b4-454b-8347-028cec4c7487" action="configTcParameterSut" session="landslide">
+                    <applicationProperties type="com.fnfr.itest.platform2.shared.documents.ntaf.NtafTransferableDocumentObject" action="configTcParameterSut" subharness="http://spirent.com/NTAF/harness/Landslide/10.5/Config" harness="http://spirent.com/NTAF/harness/Landslide/13.0/Main" harnessName="Landslide" testcase="$handle0.TsGroup(0).Tc(0)" testcase.inherit="false" name="SgwSut" name.inherit="false" name.sub="false" sutName="NDC2B Zone2 Neo Enterprise PGW" sutName.inherit="false" sutName.sub="false"/>
+                </item>
+                <item guid="f0151f2d-5a68-4854-a1c3-1bedaba215ab" action="queryLibraryInfo" session="landslide" normalOffset="1.614" acceleratedOffset="1.614" estimatedStepExecutionTime="120" useProcTimeout="false">
+                    <postProcessing>
+                        <analysisRules>
+                            <item>
+                                <extractorInfo extractorType="regex">
+                                    <extractorProperties type="com.fnfr.svt.mapping.regex.extractors.RegexExtractorPropertyGroup">
+                                        <regex>(java0x\\w+)</regex>
+                                    </extractorProperties>
+                                </extractorInfo>
+                                <processorInfo ruleType="store">
+                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.StoreProcessorPropertyGroup">
+                                        <storageLocation>lib</storageLocation>
+                                    </ruleProperties>
+                                </processorInfo>
+                            </item>
+                        </analysisRules>
+                    </postProcessing>
+                    <applicationProperties type="com.fnfr.itest.platform2.shared.documents.ntaf.NtafTransferableDocumentObject" action="queryLibraryInfo" subharness="http://spirent.com/NTAF/harness/Landslide/10.5/Query" harness="http://spirent.com/NTAF/harness/Landslide/13.0/Main" harnessName="Landslide" libraryType="User" libraryType.inherit="false" libraryName="as615p" libraryName.inherit="false"/>
+                </item>
+                <item guid="ad282e51-9c78-4c96-8a6c-3ebec24c7c2a" action="get" session="landslide" normalOffset="1.614" acceleratedOffset="1.614" estimatedStepExecutionTime="120" useProcTimeout="false">
+                    <postProcessing>
+                        <analysisRules>
+                            <item>
+                                <extractorInfo extractorType="query">
+                                    <extractorProperties type="com.fnfr.svt.mapping.execution.extractors.QueryDataExtractorPropertyGroup">
+                                        <query>ntafResponse/NameValuePair/value</query>
+                                    </extractorProperties>
+                                </extractorInfo>
+                                <processorInfo ruleType="store">
+                                    <ruleProperties type="com.fnfr.svt.execution.builtin.processors.StoreProcessorPropertyGroup">
+                                        <storageLocation>lib2</storageLocation>
+                                    </ruleProperties>
+                                </processorInfo>
+                            </item>
+                        </analysisRules>
+                    </postProcessing>
+                    <applicationProperties type="com.fnfr.itest.platform2.shared.documents.ntaf.NtafTransferableDocumentObject" action="get" subharness="http://spirent.com/NTAF/harness/Landslide/10.5/Get" harness="http://spirent.com/NTAF/harness/Landslide/13.0/Main" harnessName="Landslide" getObject="$lib" getObject.inherit="false">
+                        <name inherit="false" parameter="name">
+                            <item inherit="false">Id</item>
+                        </name>
+                    </applicationProperties>
+                </item>
+                <item guid="372a512e-1a59-43a8-9b49-7542e5daa7e5" action="config" session="landslide" normalOffset="1.614" acceleratedOffset="1.614" estimatedStepExecutionTime="120" useProcTimeout="false">
+                    <applicationProperties type="com.fnfr.itest.platform2.shared.documents.ntaf.NtafTransferableDocumentObject" action="config" subharness="http://spirent.com/NTAF/harness/Landslide/10.5/Config" harness="http://spirent.com/NTAF/harness/Landslide/13.0/Main" harnessName="Landslide" configObject="$handle0" configObject.inherit="false">
+                        <NameValuePair inherit="false">
+                            <item name="Name" name.inherit="false" value="mod_test2" value.inherit="false"/>
+                            <item name="Library" name.inherit="false" value="$lib2 " value.inherit="false"/>
+                        </NameValuePair>
+                    </applicationProperties>
+                </item>
+                <item guid="5166b66c-8cff-4d42-a107-c471c3479dba" action="save" session="landslide">
+                    <command>
+                        <body> $handle0.TsGroup(0).Tc(0)</body>
+                    </command>
+                    <applicationProperties type="com.fnfr.itest.platform2.shared.documents.ntaf.NtafTransferableDocumentObject" action="save" subharness="http://spirent.com/NTAF/harness/Landslide/10.5/TclApi" harness="http://spirent.com/NTAF/harness/Landslide/13.0/Main" harnessName="Landslide">
+                        <arg inherit="false" parameter="arg">
+                            <item inherit="false">$handle0</item>
+                        </arg>
+                    </applicationProperties>
+                </item>
+                <item guid="9e5a3838-b984-4afd-a77e-b72122edc43e" action="SaveAsTcl" session="landslide" skip="true" normalOffset="1.614" acceleratedOffset="1.614" estimatedStepExecutionTime="120" useProcTimeout="false">
+                    <applicationProperties type="com.fnfr.itest.platform2.shared.documents.ntaf.NtafTransferableDocumentObject" action="SaveAsTcl" subharness="http://spirent.com/NTAF/harness/Landslide/10.5/Perform" harness="http://spirent.com/NTAF/harness/Landslide/13.0/Main" harnessName="Landslide">
+                        <arg inherit="false" parameter="arg">
+                            <item inherit="false">$handle0</item>
+                            <item inherit="false">&quot;C:\\Users\\as615p\\new_ls.tcl&quot;</item>
+                        </arg>
+                    </applicationProperties>
+                </item>
+                <item guid="dac705dc-d74a-46c0-a2cb-54ae012ee146" action="close" session="landslide">
+                    <applicationProperties type="com.fnfr.svt.documents.EmptyPropertyGroup"/>
+                </item>
+            </steps>
+        </item>
+    </procedures>
+</testCase>

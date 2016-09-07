@@ -1,0 +1,97 @@
+<?xml version="1.0"?>
+<ResponseMap version="5.4.0.4f90e5a">
+    <sampleDictionary>
+        <item name="sample1">
+            <action actionType="readFile">
+                <command>
+                    <body>file:/C:/Users/agill/Desktop/SGW_Nodal_parameter.csv</body>
+                </command>
+            </action>
+            <responseBody>##Network Device##,,
+Element,Name,Value
+TestNode-EnbUserAddr,,
+,Phy,eth10
+,Ip,10.10.10.10
+,NumLinksOrNodes ,20
+,NextHop,10.10.10.1
+,VlanId,2005
+,NumVlan,1
+,UniqueVlanAddr,fasle
+,ForcedEthInterface,eth10
+TestNode-MmeControlAddr,,
+,Phy,eth11
+,Ip,20.20.20.20
+,NumLinksOrNodes ,10
+,NextHop,20.20.20.1
+,VlanId,2010
+,NumVlan,1
+,UniqueVlanAddr,FALSE
+,ForcedEthInterface,eth11
+NetworkHostAddrLocal,,
+,Phy,eth12
+,Ip,30.30.30.30
+,NumLinksOrNodes ,5
+,NextHop,30.30.30.1
+,VlanId,2015
+,NumVlan,1
+,UniqueVlanAddr,FALSE
+,ForcedEthInterface,eth12
+Subscriber,,
+,Gtp2Imsi,111
+,Gtp2MsIsdn ,111
+,Sessions,1
+,Gtp2Apn_0,11
+SUT,,
+,SgwSut,
+,SgwUserSut,
+,PgwV4Sut,
+,PgwUserSutEn,
+User Data,,
+,AddDmfMainflow,11
+###END####,,
+</responseBody>
+            <contentType>text</contentType>
+            <structuredData>
+&lt;structure xmlns:map=&quot;http://www.fnfr.com/svt/mapping&quot;&gt;
+    &lt;isEmpty&gt;false&lt;/isEmpty&gt;
+&lt;/structure&gt;
+</structuredData>
+            <aliases>
+                <item name="isEmpty">
+                    <queryFormatString>.//isEmpty</queryFormatString>
+                </item>
+            </aliases>
+        </item>
+    </sampleDictionary>
+    <mapperProperties>
+        <item type="com.fnfr.svt.mapping.table.TabularMapperProperties">
+            <tabularMaps>
+                <item name="table1">
+                    <banner>##Network Device##,,</banner>
+                    <footer>###END####,,</footer>
+                    <bannerStructure>Wildcard</bannerStructure>
+                    <footerStructure>Wildcard</footerStructure>
+                    <delimiter>Comma</delimiter>
+                    <columns>
+                        <item name="Element">
+                            <lastFullCell></lastFullCell>
+                            <uid>976e13b4-26a4-4773-a22e-d7d6a9d67dc5</uid>
+                        </item>
+                        <item name="Name">
+                            <lastFullCell></lastFullCell>
+                            <uid>43aa1b41-4456-4329-b3f7-6137ce04f98a</uid>
+                        </item>
+                        <item name="Value">
+                            <lastFullCell></lastFullCell>
+                            <uid>99cb850c-548c-4f83-8f12-05be7d36388c</uid>
+                        </item>
+                    </columns>
+                </item>
+            </tabularMaps>
+        </item>
+    </mapperProperties>
+    <applicabilityProperties actionType="readFile" command="file:/C:/Users/agill/Desktop/SGW_Nodal_parameter.csv"/>
+    <aliases>
+        <item name="query1"/>
+    </aliases>
+</ResponseMap>
